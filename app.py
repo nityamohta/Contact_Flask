@@ -14,6 +14,12 @@ tasks = [
         'title': u'Learn Python',
         'description': u'Need to find a good Python tutorial on the web',
         'done': False
+    },
+    {
+        'id': 3,
+        'title': u'Python is outdated',
+        'description': u'Need to learn languages like Go and Perl',
+        'done': False
     }
 ]
 
@@ -76,8 +82,6 @@ def update_task(task_id):
     task[0]['description'] = request.json.get('description', task[0]['description'])
     task[0]['done'] = request.json.get('done', task[0]['done'])
     return jsonify({'task': task[0]})
-
-
 
 
 @app.route('/')
